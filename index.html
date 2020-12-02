@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Boolflix</title>
+        <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div id="root" class="flex">
+            <header>
+                <div class="top-header">
+                    <input type="text" name="" value="" placeholder="Search a movie..." v-model="userSearch">
+                    <button type="button" name="button" @click="searchMovie">Search</button>
+                </div>
+            </header>
+            <main>
+                <div class="main-container">
+                    <div class="movie" v-for="movie in movies">
+                        <img :src="'https://image.tmdb.org/t/p/w500'+movie.poster_path" alt="">
+                        <h3>{{movie.title}}</h3>
+                        <h4>Original title: <br>{{movie.original_title}}</h4>
+                        <span class="language">Language: {{movie.original_language}}</span>
+                        <span class="vote">Vote: {{movie.vote_average}}</span>
+                    </div>
+                </div>
+            </main>
+            <footer>
+            </footer>
+        </div>
+
+        <script src="js/main.js" charset="utf-8"></script>
+    </body>
+</html>

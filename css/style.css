@@ -1,0 +1,93 @@
+/* GENERALI */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: black;
+    min-height: 100vh;
+}
+
+/* HEADER */
+.top-header {
+    width: 1070px;
+    height: 100%;
+    margin: 0 auto;
+    text-align: center;
+    height: 70px;
+    padding-top: 40px;
+}
+
+.top-header input {
+    padding: 10px;
+    border-radius: 5px;
+    width: 300px;
+}
+
+.top-header button {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #e20712;
+    color: white;
+    border: 1px solid #e20712;
+    margin-left: 10px;
+}
+
+header img {
+    height: 50px;
+    margin-top: 10px;
+}
+
+/* MAIN */
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 100px 0;
+}
+
+.movie {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    flex-basis: 300px;
+    padding: 20px;
+    margin: 10px 10px;
+    height: 400px;
+    background: #404142;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.movie img {
+    height: 200px;
+}
+
+.movie h3 {
+    margin: 10px 0;
+    color: white;
+    font-size: 22px;
+}
+
+.movie h4 {
+    margin: 10px 0;
+    color: white;
+}
+
+.movie .language {
+    color: grey;
+    font-size: 20px;
+}
+
+.movie .vote {
+    color: grey;
+}
+
+.movie ul {
+    list-style-type: none;
+}
