@@ -50,7 +50,7 @@ header img {
     padding: 100px 0;
 }
 
-.movie {
+.movie, .tvShow {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -64,35 +64,35 @@ header img {
     border-radius: 5px;
 }
 
-.movie .poster {
+.movie .poster, .tvShow .poster {
     height: 200px;
 }
 
-.movie h3 {
+.movie h3, .tvShow h3 {
     margin: 10px 0;
     color: white;
     font-size: 22px;
 }
 
-.movie h4 {
+.movie h4, .tvShow h4 {
     margin: 10px 0;
     color: white;
 }
 
-.movie .language {
+.movie .language, .tvShow .language {
     color: grey;
     font-size: 20px;
 }
 
-.movie .vote {
+.movie .vote, .tvShow .vote{
     color: grey;
 }
 
-.movie ul {
+.movie ul, .tvShow ul{
     list-style-type: none;
 }
 
-.movie .flags {
+.movie .flags, .tvShow .flags {
     width: 30px;
     vertical-align: middle;
     margin-left: 5px;

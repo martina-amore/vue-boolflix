@@ -4,16 +4,17 @@ const app = new Vue ({
     el: "#root",
     data: {
         movies: [],
+        tvShows: [],
         userSearch: "m",
     },
     methods: {
         searchMovie: function () {
-            axios.get('https://api.themoviedb.org/3/search/movie', {
-                params: {
-                    api_key: "163ee6a9373349c140026e09d186a9b9",
-                    query: this.userSearch,
-                }
-            })
+                axios.get('https://api.themoviedb.org/3/search/movie', {
+                    params: {
+                        api_key: "163ee6a9373349c140026e09d186a9b9",
+                        query: this.userSearch,
+                    }
+                })
             .then((answer) => {
                 this.movies = answer.data.results;
                 for (var i = 0; i < this.movies.length; i++) {
@@ -21,8 +22,23 @@ const app = new Vue ({
                 }
             })
         },
+        searchTv: function () {
+            axios.get('https://api.themoviedb.org/3/search/tv', {
+                params: {
+                    api_key: "163ee6a9373349c140026e09d186a9b9",
+                    query: this.userSearch,
+                }
+            })
+            .then((answer) => {
+                this.tvShows = answer.data.results;
+                for (var i = 0; i < this.tvShows.length; i++) {
+                    this.tvShows[i].vote_average = Math.ceil(this.tvShows[i].vote_average / 2);
+                }
+            })
+        },
         noFlag: function (index) {
             this.movies[index].original_language = "unknown";
+            this.tvShows[index].original_language = "unknown";
         },
         // noPoster: function (index) {
         //     this.movies[index].poster_path = "";
