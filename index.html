@@ -19,13 +19,12 @@
             </header>
             <main>
                 <div class="main-container">
-                    <div class="movie" v-for="movie in movies">
-                        <img class="poster" :src="'https://image.tmdb.org/t/p/w500'+movie.poster_path" alt="">
+                    <div class="movie" v-for="(movie, index) in movies">
+                        <img class="poster" :src="'https://image.tmdb.org/t/p/w500'+movie.poster_path" @error="noPoster(index)" alt="">
                         <h3>{{movie.title}}</h3>
                         <h4>Original title: <br>{{movie.original_title}}</h4>
-                        <span class="language">Language: <img class="flags" :src="'img/'+movie.original_language+'.svg'" alt=""></span>
+                        <span class="language">Language: <img class="flags" :src="'img/'+movie.original_language+'.svg'" @error="noFlag(index)" alt=""></span>
                         <span class="vote">Vote: <i class="vote fas fa-star" v-for="n in movie.vote_average"></i><i class="vote far fa-star" v-for="n in 5 - movie.vote_average"></i></span>
-                        <span></span>
                     </div>
                 </div>
             </main>

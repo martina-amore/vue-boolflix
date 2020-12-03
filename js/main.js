@@ -4,7 +4,7 @@ const app = new Vue ({
     el: "#root",
     data: {
         movies: [],
-        userSearch: "",
+        userSearch: "m",
     },
     methods: {
         searchMovie: function () {
@@ -14,12 +14,18 @@ const app = new Vue ({
                     query: this.userSearch,
                 }
             })
-                .then((answer) => {
-                    this.movies = answer.data.results;
-                    for (var i = 0; i < this.movies.length; i++) {
-                        this.movies[i].vote_average = Math.ceil(this.movies[i].vote_average / 2);
-                    }
+            .then((answer) => {
+                this.movies = answer.data.results;
+                for (var i = 0; i < this.movies.length; i++) {
+                    this.movies[i].vote_average = Math.ceil(this.movies[i].vote_average / 2);
+                }
             })
-        }
+        },
+        noFlag: function (index) {
+            this.movies[index].original_language = "unknown";
+        },
+        // noPoster: function (index) {
+        //     this.movies[index].poster_path = "";
+        // }
     }
 })
