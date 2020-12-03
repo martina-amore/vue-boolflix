@@ -17,10 +17,11 @@ const app = new Vue ({
                 })
             .then((answer) => {
                 this.movies = answer.data.results;
-                for (var i = 0; i < this.movies.length; i++) {
-                    this.movies[i].vote_average = Math.ceil(this.movies[i].vote_average / 2);
-                }
-            })
+            }
+        )},
+        voteStars: function (element) {
+                let vote = Math.ceil(element.vote_average / 2);
+                return vote;
         },
         searchTv: function () {
             axios.get('https://api.themoviedb.org/3/search/tv', {
@@ -31,9 +32,6 @@ const app = new Vue ({
             })
             .then((answer) => {
                 this.tvShows = answer.data.results;
-                for (var i = 0; i < this.tvShows.length; i++) {
-                    this.tvShows[i].vote_average = Math.ceil(this.tvShows[i].vote_average / 2);
-                }
             })
         },
         noFlag: function (index) {

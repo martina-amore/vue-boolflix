@@ -24,14 +24,14 @@
                         <h3>{{movie.title}}</h3>
                         <h4>Original title: <br>{{movie.original_title}}</h4>
                         <span class="language">Language: <img class="flags" :src="'img/'+movie.original_language+'.svg'" @error="noFlag(index)" alt=""></span>
-                        <span class="vote">Vote: <i class="vote fas fa-star" v-for="n in movie.vote_average"></i><i class="vote far fa-star" v-for="n in 5 - movie.vote_average"></i></span>
+                        <span class="vote">Vote: <i class="vote fas fa-star" v-for="n in voteStars(movie)"></i><i class="vote far fa-star" v-for="n in 5 - voteStars(movie)"></i></span>
                     </div>
                     <div class="tvShow" v-for="(tvShow, index) in tvShows">
                         <img class="poster" :src="'https://image.tmdb.org/t/p/w500'+tvShow.poster_path" alt="">
                         <h3>{{tvShow.name}}</h3>
                         <h4>Original title: <br>{{tvShow.original_name}}</h4>
                         <span class="language">Language: <img class="flags" :src="'img/'+tvShow.original_language+'.svg'" @error="noFlag(index)" alt=""></span>
-                        <span class="vote">Vote: <i class="vote fas fa-star" v-for="n in tvShow.vote_average"></i><i class="vote far fa-star" v-for="n in 5 - tvShow.vote_average"></i></span>
+                        <span class="vote">Vote: <i class="vote fas fa-star" v-for="n in voteStars(tvShow)"></i><i class="vote far fa-star" v-for="n in 5 - voteStars(tvShow)"></i></span>
                     </div>
                 </div>
             </main>
