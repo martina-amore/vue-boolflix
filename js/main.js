@@ -16,6 +16,10 @@ const app = new Vue ({
             })
                 .then((answer) => {
                     this.movies = answer.data.results;
+                    for (var i = 0; i < this.movies.length; i++) {
+                        this.movies[i].vote_average = Math.ceil(this.movies[i].vote_average / 2);
+
+                    }
             })
         }
     }

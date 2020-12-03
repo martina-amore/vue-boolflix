@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>Boolflix</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
@@ -23,7 +24,8 @@
                         <h3>{{movie.title}}</h3>
                         <h4>Original title: <br>{{movie.original_title}}</h4>
                         <span class="language">Language: {{movie.original_language}}</span>
-                        <span class="vote">Vote: {{movie.vote_average}}</span>
+                        <span>Vote: <i class="vote fas fa-star" v-for="n in movie.vote_average"></i><i class="vote far fa-star" v-for="n in 5 - movie.vote_average"></i></span>
+                        <span></span>
                     </div>
                 </div>
             </main>
