@@ -58,13 +58,13 @@ header img {
     flex-basis: 300px;
     padding: 20px;
     margin: 10px 10px;
-    height: 400px;
+    height: 450px;
     background: #404142;
     text-align: center;
     border-radius: 5px;
 }
 
-.movie img {
+.movie .poster {
     height: 200px;
 }
 
@@ -90,4 +90,10 @@ header img {
 
 .movie ul {
     list-style-type: none;
+}
+
+.movie .flags {
+    width: 30px;
+    vertical-align: middle;
+    margin-left: 5px;
 }

@@ -20,11 +20,11 @@
             <main>
                 <div class="main-container">
                     <div class="movie" v-for="movie in movies">
-                        <img :src="'https://image.tmdb.org/t/p/w500'+movie.poster_path" alt="">
+                        <img class="poster" :src="'https://image.tmdb.org/t/p/w500'+movie.poster_path" alt="">
                         <h3>{{movie.title}}</h3>
                         <h4>Original title: <br>{{movie.original_title}}</h4>
-                        <span class="language">Language: {{movie.original_language}}</span>
-                        <span>Vote: <i class="vote fas fa-star" v-for="n in movie.vote_average"></i><i class="vote far fa-star" v-for="n in 5 - movie.vote_average"></i></span>
+                        <span class="language">Language: <img class="flags" :src="'img/'+movie.original_language+'.svg'" alt=""></span>
+                        <span class="vote">Vote: <i class="vote fas fa-star" v-for="n in movie.vote_average"></i><i class="vote far fa-star" v-for="n in 5 - movie.vote_average"></i></span>
                         <span></span>
                     </div>
                 </div>
