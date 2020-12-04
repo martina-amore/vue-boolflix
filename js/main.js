@@ -34,12 +34,11 @@ const app = new Vue ({
                 this.tvShows = answer.data.results;
             })
         },
-        noFlag: function (index) {
-            this.movies[index].original_language = "unknown";
-            this.tvShows[index].original_language = "unknown";
+        noFlag: function (event) {
+            event.target.src = "img/unknown.svg"
         },
-        // noPoster: function (index) {
-        //     this.movies[index].poster_path = "";
-        // }
+        noPoster: function (event) {
+            event.target.src = "img/unknown-poster.png";
+        }
     }
 })
