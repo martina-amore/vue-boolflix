@@ -5,7 +5,7 @@ const app = new Vue ({
     data: {
         movies: [],
         tvShows: [],
-        userSearch: "m",
+        userSearch: "",
     },
     methods: {
         searchMovie: function () {

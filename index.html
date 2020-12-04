@@ -12,31 +12,49 @@
     <body>
         <div id="root" class="flex">
             <header>
-                <div class="top-header">
-                    <input type="text" name="" value="" placeholder="Search a movie..." v-model="userSearch">
-                    <button type="button" name="button" @click="searchMovie(); searchTv()">Search</button>
+                <div class="top-header flex">
+                    <div class="logo">
+                        <img src="img/boolflix-logo.png" alt="BoolFlix logo">
+                    </div>
+                    <div class="right-search">
+                        <input type="text" name="" value="" placeholder="Search a movie or a TV series..." v-model="userSearch" @keyup="searchMovie(); searchTv()">
+                    </div>
                 </div>
             </header>
             <main>
                 <div class="main-container">
-                    <div class="movie" v-for="(movie, index) in movies">
-                        <img class="poster" :src="'https://image.tmdb.org/t/p/w500'+movie.poster_path" @error="noPoster" alt="">
-                        <h3>{{movie.title}}</h3>
-                        <h4>Original title: <br>{{movie.original_title}}</h4>
-                        <span class="language">Language: <img class="flags" :src="'img/'+movie.original_language+'.svg'" @error="noFlag" alt=""></span>
-                        <span class="vote">Vote: <i class="vote fas fa-star" v-for="n in voteStars(movie)"></i><i class="vote far fa-star" v-for="n in 5 - voteStars(movie)"></i></span>
-                    </div>
-                    <div class="tvShow" v-for="(tvShow, index) in tvShows">
-                        <img class="poster" :src="'https://image.tmdb.org/t/p/w500'+tvShow.poster_path" @error="noPoster" alt="">
-                        <h3>{{tvShow.name}}</h3>
-                        <h4>Original title: <br>{{tvShow.original_name}}</h4>
-                        <span class="language">Language: <img class="flags" :src="'img/'+tvShow.original_language+'.svg'" @error="noFlag" alt=""></span>
-                        <span class="vote">Vote: <i class="vote fas fa-star" v-for="n in voteStars(tvShow)"></i><i class="vote far fa-star" v-for="n in 5 - voteStars(tvShow)"></i></span>
-                    </div>
+                    <ul>
+                        <li class="movie" v-for="(movie, index) in movies">
+                            <div class="cover">
+                                <img class="poster" :src="'https://image.tmdb.org/t/p/w342'+movie.poster_path" @error="noPoster" alt="">
+                                <div class="middle">
+                                    <div class="hover">
+                                        <h3>Title: {{movie.title}}</h3>
+                                        <h4>Original title: {{movie.original_title}}</h4>
+                                        <span class="language">Language: <img class="flags" :src="'img/'+movie.original_language+'.svg'" @error="noFlag" alt=""></span>
+                                        <div class="vote">Vote: <i class="fas fa-star" v-for="n in voteStars(movie)"></i><i class="far fa-star" v-for="n in 5 - voteStars(movie)"></i></div>
+                                        <div class="overview">Overview: {{movie.overview}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="tvShow" v-for="(tvShow, index) in tvShows">
+                            <div class="cover">
+                                <img class="poster" :src="'https://image.tmdb.org/t/p/w500'+tvShow.poster_path" @error="noPoster" alt="">
+                                <div class="middle">
+                                    <div class="hover">
+                                        <h3>Title: {{tvShow.name}}</h3>
+                                        <h4>Original title: {{tvShow.original_name}}</h4>
+                                        <span class="language">Language: <img class="flags" :src="'img/'+tvShow.original_language+'.svg'" @error="noFlag" alt=""></span>
+                                        <div class="vote">Vote: <i class="fas fa-star" v-for="n in voteStars(tvShow)"></i><i class="far fa-star" v-for="n in 5 - voteStars(tvShow)"></i></div>
+                                        <div class="overview">Overview: {{tvShow.overview}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </main>
-            <footer>
-            </footer>
         </div>
 
         <script src="js/main.js" charset="utf-8"></script>

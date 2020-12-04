@@ -13,36 +13,42 @@ body {
 
 /* HEADER */
 .top-header {
-    width: 1070px;
-    height: 100%;
-    margin: 0 auto;
-    text-align: center;
-    height: 70px;
-    padding-top: 40px;
+    width: 100vw;
+    padding-left: 20px;
+    padding-right: 24px;
+    height: 100px;
+    background-color: rgba(50, 50, 50, 0.5);
+}
+
+.top-header.flex {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 2;
 }
 
 .top-header input {
     padding: 10px;
     border-radius: 5px;
     width: 300px;
+    outline: none;
+    transition: all 0.2s ease;
+    border-style: none;
+    box-shadow: 1px 1px 10px 2px grey;
 }
 
-.top-header button {
-    padding: 10px;
-    border-radius: 5px;
-    background-color: #e20712;
-    color: white;
-    border: 1px solid #e20712;
-    margin-left: 10px;
+.top-header input:focus {
+    box-shadow: 1px 1px 14px 5px red;
 }
 
-header img {
-    height: 50px;
-    margin-top: 10px;
+.logo img {
+    width: 200px;
 }
 
 /* MAIN */
-.main-container {
+.main-container ul {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,42 +56,68 @@ header img {
     padding: 100px 0;
 }
 
+.cover {
+    height: 550px;
+}
+
 .movie, .tvShow {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-    flex-basis: 300px;
-    padding: 20px;
+    height: 550px;
+    width: 342px;
     margin: 10px 10px;
-    height: 450px;
-    background: #404142;
-    text-align: center;
     border-radius: 5px;
 }
 
 .movie .poster, .tvShow .poster {
-    height: 200px;
+    height: 550px;
+    width: 342px;
+    box-shadow: 1px 1px 20px 1px rgb(90, 90, 90);
+    transition: all 0.1s ease;
+}
+
+.movie .poster:hover, .tvShow .poster:hover {
+    cursor: pointer;
+    opacity: 0.3;
+}
+
+.middle {
+    opacity: 0;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.cover:hover img {
+    opacity: 0.3;
+}
+
+.cover:hover {
+    box-shadow: 1px 1px 20px 5px red;
+}
+
+.cover {
+    position: relative;
+}
+
+.cover:hover .middle {
+    opacity: 1;
 }
 
 .movie h3, .tvShow h3 {
     margin: 10px 0;
     color: white;
-    font-size: 22px;
+    font-size: 26px;
 }
 
-.movie h4, .tvShow h4 {
+.movie h4, .tvShow h4, .overview {
     margin: 10px 0;
     color: white;
 }
 
-.movie .language, .tvShow .language {
-    color: grey;
+.language, .vote {
+    color: white;
     font-size: 20px;
-}
-
-.movie .vote, .tvShow .vote{
-    color: grey;
 }
 
 .movie ul, .tvShow ul{
@@ -96,4 +128,12 @@ header img {
     width: 30px;
     vertical-align: middle;
     margin-left: 5px;
+}
+
+.display-none {
+    display: none;
+}
+
+.fas, .far {
+    color: gold;
 }
