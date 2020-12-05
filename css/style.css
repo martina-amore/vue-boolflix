@@ -88,12 +88,13 @@ body {
     cursor: pointer;
 }
 
-.cover:hover img {
+.cover:hover .poster {
     opacity: 0.3;
 }
 
 .cover:hover {
     box-shadow: 1px 1px 20px 5px red;
+    overflow-y: hidden;
 }
 
 .cover {
