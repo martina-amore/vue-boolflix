@@ -6,5 +6,5 @@ Funzionalità:
   <li>Ricerca film e serie tv con risultati in tempo reale durante la digitazione</li>
   <li>Informazioni dei vari elementi visualizzate su hover</li>
  </ul>
-
+<br>
 ![boolflix.jpg]
